@@ -121,7 +121,7 @@ jobs:
         with:
           context: ./api  
           push: true
-          tags: rohaank12/backend:latest
+          tags: ronniekulkarni/backend:latest
           file: ./api/Dockerfile
 
   build_frontend_docker_image_and_push:
@@ -145,7 +145,7 @@ jobs:
         with:
           context: ./client
           push: true
-          tags: rohaank12/frontend:latest
+          tags: ronniekulkarni/frontend:latest
           file: ./client/Dockerfile
 
   trivy_image_scan:
@@ -159,7 +159,7 @@ jobs:
         uses: aquasecurity/trivy-action@0.28.0
         with:
           scan-type: image               # 👈 scan container image
-          image-ref: rohaank12/backend:latest
+          image-ref: ronniekulkarni/backend:latest
           format: table
           exit-code: '0'                 
           ignore-unfixed: true
@@ -170,7 +170,7 @@ jobs:
         uses: aquasecurity/trivy-action@0.28.0
         with:
           scan-type: image               # 👈 scan container image
-          image-ref: rohaank12/frontend:latest
+          image-ref: ronniekulkarni/frontend:latest
           format: table
           exit-code: '0'              
           ignore-unfixed: true
